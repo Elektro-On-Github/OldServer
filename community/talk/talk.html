@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parla con Elektro!</title>
+    <link rel="stylesheet" type="text/css" href="/../../css/talk.css">
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <p style="text-align:center">Invia messaggi anonimi</p>
+    <hr>
+    Inviami messaggi anonimi!<br>
+    <br>
+    Nota: Tutto ció che scrivi verrá scritto nel log del server<br>
+    di ElektroWindows, quindi l'invio di messaggi non puó essere annullato!!<br>
+    RICORDO CHE L'INDIRIZZO IP DELL'UTENTE VIENE SEMPRE ARCHIVIATO NEL LOG DI APACHE<br>
+    <br>
+    <br>
+    <br>
+    ATTENZIONE: SE PREMI IL TASTO INVIO IL MESSAGGIO VERRÁ INVIATO, SCRIVI TUTTO IN UNA RIGA!<br>
+    <br>
+    <br>
+    <form action="ricevitore.php" method="post">
+        Nome Utente : <input type="text" name="username" /></br>
+        Testo da inviare : <input type="text" name="messaggio" /></br>
+        <br>
+        <input type="submit" />
+    </form>
+</body>
+</html>

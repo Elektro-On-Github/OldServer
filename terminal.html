@@ -1,0 +1,49 @@
+<?php
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Terminal</title>
+    <link rel="stylesheet" type="text/css" href="/css/terminal.css">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <p style="text-align:center">Terminale</p>
+    <hr>
+    <p>Benvenuto nel Terminale!!<br>
+    Per iniziare scrivi un percorso di una directory<br>
+    presente nel server pubblico. Es: /main/homepage.html<br>
+    La root del terminale é elektrowindows.ddns.net/<br>
+    non si puó accedere a directory di sistema (Es: /Windows/System32)<br>
+    per motivi di sicurezza. Se non conosci il sito web dai uno sguardo alla <a href="/smanettoni_zone/sitemap.html">mappa del server</a><br>
+    che trovi anche nella zona degli "smanettoni"<br>
+    per utilizzare il terminale abilita i popup per la scheda del browser</p>
+    <h1 id="cmd"></h1>
+    <!-- Casella_Testo -->
+    <input type="text" id="myTextbox" placeholder="">
+    <script>
+        var textbox = document.getElementById("myTextbox");
+        textbox.value = ">_";
+        textbox.addEventListener("keydown", function(event) {
+            if ((this.selectionStart <= 2 && event.keyCode === 8) || (this.selectionStart === 0 && event.keyCode < 37)) {
+                event.preventDefault();
+            }
+            if (event.keyCode === 13) {
+                var cmd = textbox.value.slice(2);
+                if (cmd != null) {
+                    window.open("http://elektrowindows.ddns.net/" + cmd);
+                }
+            }
+        });
+        textbox.addEventListener("keyup", function(event) {
+            if (this.value.indexOf(">_") !== 0) {
+                this.value = ">_" + this.value;
+            }
+        });
+    </script>
+</body>
+</html>
